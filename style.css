@@ -1,0 +1,65 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #282c34;
+  color: #61dafb;
+}
+
+h1 {
+  margin: 50px;
+  font-size: 50px;
+  position: fixed;
+  top: 15px;
+  background-color: #1E1E1E;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+.clock {
+  font-size: 50px;
+  font-weight: bold;
+  background: #1E1E1E;
+  position: fixed;
+  top: 250px;
+  padding: 20px 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.copy-button {
+  position: fixed;
+  top: 400px;
+  font-weight: bold;
+  font-size: 18px;
+  background-color: #61DAFB;
+  color: #282c34;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.copy-button:hover {
+  color: #3D434E;
+  background-color: #43A2C3;
+}
+
+.copy-message {
+  position: fixed;
+  top: 450px;
+  font-size: 16px;
+  color: #61dafb;
+  visibility: hidden;
+  transition: visibility 0.3s, opacity 0.3s;
+  opacity: 0;
+}
+
+.copy-message.visible {
+  visibility: visible;
+  opacity: 1;
+}

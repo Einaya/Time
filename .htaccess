@@ -1,0 +1,26 @@
+# تأمين ملف .htaccess نفسه
+<Files ".htaccess">
+  Order Allow,Deny
+  Deny from all
+</Files>
+
+# منع الوصول إلى ملفات النسخ الاحتياطي
+<FilesMatch "\.(bak|old|swp)$">
+  Order Allow,Deny
+  Deny from all
+</FilesMatch>
+
+# إعادة توجيه HTTP إلى HTTPS
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# منع الوصول إلى مجلدات معينة مثل .git
+<DirectoryMatch "^/.git">
+  Order Allow,Deny
+  Deny from all
+</DirectoryMatch>
+
+# تخصيص صفحات الأخطاء
+ErrorDocument 404 /404.html
+ErrorDocument 500 /500.html
